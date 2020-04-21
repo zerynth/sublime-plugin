@@ -1,0 +1,20 @@
+{
+	"shell_cmd": "ztc project compile \"$project_path\"",
+	"file_regex": "^(.+[^:]):(\\d+):(\\d+): (?:fatal )?((?:error|warning): .+)$",
+    "working_dir":"$project_path",
+	"selector": "source.python",
+
+	"env": {"PYTHONIOENCODING": "utf-8"},
+
+	"variants":
+	[
+		{
+			"name": "Uplink",
+			"shell_cmd": "ztc project uplink \"$project_path\"",
+		},
+		{
+			"name": "Install dependencies",
+			"shell_cmd": "ztc project deps \"$project_path\"",
+		}
+	]
+}
